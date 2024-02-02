@@ -19,13 +19,14 @@ function mealsDisplay() {
     (meal) =>
       `
       <li class="card">
-      <h2>${meal.strMeal}</h2>
-      <p>${meal.strArea}</p>
-      <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
-      <ul></ul>
+        <h2>${meal.strMeal}</h2>
+        <p>${meal.strArea}</p>
+        <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
+        <ul></ul>
       </li>
     `
-  );
+  )
+  .join("");
 }
 
 
