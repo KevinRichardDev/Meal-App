@@ -18,9 +18,19 @@ function mealsDisplay() {
   result.innerHTML = meals.map(
     (meal) =>
       `
+      <li class="card">
       <h2>${meal.strMeal}</h2>
+      <p>${meal.strArea}</p>
+      <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
+      <ul></ul>
+      </li>
     `
   );
 }
 
-fetchMeals();
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetchMeals().then(() => mealsDisplay());
+});
+
