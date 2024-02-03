@@ -2,7 +2,7 @@
 
 const result = document.getElementById("result");
 const form = document.querySelector("form");
-const input = document.querySelector("input")
+const input = document.querySelector("input");
 let meals = [];
 
 async function fetchMeals() {
@@ -29,6 +29,10 @@ function mealsDisplay() {
   )
   .join("");
 }
+
+input.addEventListener("input", () => {
+  console.log("test");
+})
 
 
 form.addEventListener("submit", (e) => {
