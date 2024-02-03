@@ -2,6 +2,7 @@
 
 const result = document.getElementById("result");
 const form = document.querySelector("form");
+const input = document.querySelector("input")
 let meals = [];
 
 async function fetchMeals() {
