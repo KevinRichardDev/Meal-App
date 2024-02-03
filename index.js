@@ -34,6 +34,7 @@ input.addEventListener("input", (e) => {
   fetchMeals(e.target.value);
 })
 
+// ajout d'un evenment a form
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
