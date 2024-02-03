@@ -13,6 +13,8 @@ async function fetchMeals(search) {
   console.log(meals);
 }
 
+// fonction pour limiter le nombre de recherche a 12
+
 function mealsDisplay() {
   meals.length = 12;
 
