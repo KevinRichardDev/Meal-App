@@ -6,7 +6,7 @@ const input = document.querySelector("input");
 let meals = [];
 
 async function fetchMeals(search) {
-  await fetch("https://themealdb.com/api/json/v1/1/search.php?s=" + search)
+  await fetch(`https://themealdb.com/api/json/v1/1/search.php?s=${search}`)
     .then((res) => res.json())
     .then((data) => (meals = data.meals));
 
