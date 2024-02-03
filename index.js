@@ -5,8 +5,8 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 let meals = [];
 
-async function fetchMeals() {
-  await fetch("https://themealdb.com/api/json/v1/1/search.php?s=chicken")
+async function fetchMeals(search) {
+  await fetch("https://themealdb.com/api/json/v1/1/search.php?s=" + search)
     .then((res) => res.json())
     .then((data) => (meals = data.meals));
 
@@ -30,8 +30,8 @@ function mealsDisplay() {
   .join("");
 }
 
-input.addEventListener("input", () => {
-  console.log("test");
+input.addEventListener("input", (e) => {
+  fetchMeals(e.target.value);
 })
 
 
