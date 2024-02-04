@@ -29,9 +29,12 @@ function mealsDisplay() {
             let ingredient = meal[`strIngredient${i}`];
             let measure = meal[`strMeasure${i}`];
 
-            console.log(ingredient + " - " + measure);
+            ingredients.push(ingredient + " - " + measure);
           }
         }
+
+        console.log(ingredients);
+
         return `
           <li class="card">
             <h2>${meal.strMeal}</h2>
