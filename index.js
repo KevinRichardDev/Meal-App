@@ -29,7 +29,7 @@ function mealsDisplay() {
             let ingredient = meal[`strIngredient${i}`];
             let measure = meal[`strMeasure${i}`];
 
-            ingredients.push(ingredient + " - " + measure);
+            ingredients.push(`<li>${ingredient} - ${measure}</li>`);
           }
         }
 
@@ -40,7 +40,7 @@ function mealsDisplay() {
             <h2>${meal.strMeal}</h2>
             <p>${meal.strArea}</p>
             <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
-            <ul></ul>
+            <ul>${ingredients.join("")}</ul>
           </li>
           `;
       })
