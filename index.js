@@ -19,28 +19,26 @@ function mealsDisplay() {
   if (meals === null) {
     result.innerHTML = "<h2>Aucun résultat</h2>";
   } else {
-
-    
     meals.length = 12;
-    
-    result.innerHTML = meals.map(
-      (meal) =>
-      `
-      <li class="card">
-      <h2>${meal.strMeal}</h2>
-      <p>${meal.strArea}</p>
-      <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
-      <ul></ul>
-      </li>
-      `
-      )
+
+    result.innerHTML = meals
+      .map((meal) => {
+        return `
+          <li class="card">
+            <h2>${meal.strMeal}</h2>
+            <p>${meal.strArea}</p>
+            <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
+            <ul></ul>
+          </li>
+          `;
+      })
       .join("");
-    }
   }
+}
 
 input.addEventListener("input", (e) => {
   fetchMeals(e.target.value);
-})
+});
 
 // ajout d'un evenment a form
 
@@ -48,4 +46,3 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   mealsDisplay();
 });
-
