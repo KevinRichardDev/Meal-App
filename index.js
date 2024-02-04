@@ -23,6 +23,12 @@ function mealsDisplay() {
 
     result.innerHTML = meals
       .map((meal) => {
+        let ingredients = [];
+        for (i = 1; i < 21; i++) {
+          if (meal[`strIngredient${i}`]) {
+            console.log("true !");
+          }
+        }
         return `
           <li class="card">
             <h2>${meal.strMeal}</h2>
