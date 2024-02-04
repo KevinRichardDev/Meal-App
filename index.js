@@ -26,7 +26,10 @@ function mealsDisplay() {
         let ingredients = [];
         for (i = 1; i < 21; i++) {
           if (meal[`strIngredient${i}`]) {
-            console.log("true !");
+            let ingredient = meal[`strIngredient${i}`];
+            let measure = meal[`strMeasure${i}`];
+
+            console.log(ingredient + " - " + measure);
           }
         }
         return `
