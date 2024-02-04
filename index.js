@@ -16,21 +16,27 @@ async function fetchMeals(search) {
 // fonction pour limiter le nombre de recherche a 12
 
 function mealsDisplay() {
-  meals.length = 12;
+  if (meals === null) {
+    result.innerHTML = "<h2>Aucun résultat</h2>";
+  } else {
 
-  result.innerHTML = meals.map(
-    (meal) =>
+    
+    meals.length = 12;
+    
+    result.innerHTML = meals.map(
+      (meal) =>
       `
       <li class="card">
-        <h2>${meal.strMeal}</h2>
-        <p>${meal.strArea}</p>
-        <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
-        <ul></ul>
+      <h2>${meal.strMeal}</h2>
+      <p>${meal.strArea}</p>
+      <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
+      <ul></ul>
       </li>
-    `
-  )
-  .join("");
-}
+      `
+      )
+      .join("");
+    }
+  }
 
 input.addEventListener("input", (e) => {
   fetchMeals(e.target.value);
@@ -40,6 +46,6 @@ input.addEventListener("input", (e) => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetchMeals().then(() => mealsDisplay());
+  mealsDisplay();
 });
 
